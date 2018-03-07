@@ -1,0 +1,21 @@
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: sms_sender_test
+  pool: 5
+  username:
+  password:
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: sms_sender_development
+  pool: 5
+  username:
+  password:
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: sms_sender_production
+  pool: 5
+  username:
+  password:
