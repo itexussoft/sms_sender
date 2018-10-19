@@ -39,14 +39,14 @@ Rails.application.configure do
 
   config.aws_credentials = {
       region: 'eu-west-1',
-      aws_key: 'AKIAJ7LMBDJAPCZFQQKQ',
-      secret_key: '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'
+      aws_key: '',
+      secret_key: ''
   }
 
   config.twilio_credentials = {
-      number: '+14156830610',
-      account_sid: 'AC8909bc67ceaa390d974b7e18f69981a6',
-      auth_token: '5774ac1d045ae4621a752e629df26803'
+      number: '',
+      account_sid: '',
+      auth_token: ''
   }
 
   # Raises error for missing translations
