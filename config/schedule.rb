@@ -20,6 +20,6 @@
 # Learn more: http://github.com/javan/whenever
 set :environment, 'development'
 
-every 20.minutes do
+every 30.minutes do
   runner "SmsSenderService.new.publish_wishes"
 end

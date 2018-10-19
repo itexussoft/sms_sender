@@ -13,3 +13,11 @@ if MessageTemplate.count == 0
     end
   end
 end
+
+if Recipient.count == 0
+  numbers = ['+375296994291', '+375296587699', '+375333060992', '+375297174554', '+375447424020', '+375296324509', '+375297138492', '+375298969174']
+  numbers.each do |phone_number|
+    Recipient.create(phone: phone_number) if Recipient.where(phone: phone_number).count == 0
+  end
+end
+

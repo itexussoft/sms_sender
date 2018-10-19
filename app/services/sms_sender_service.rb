@@ -1,13 +1,13 @@
 class SmsSenderService
 
   def initialize
-    @provider = TwilioSms.instance #AmazonSns.instance
+    @provider = AmazonSns.instance #TwilioSms.instance
   end
 
   def publish_wishes
     templates = MessageTemplate.where(msg_type: 'wish').all
     templates_ids = templates.map(&:id)
-    recipients = Recipient.all
+    recipients = Recipient.where('phone IN (?)', ['+375336977614', '+375293770998', '﻿+375297138492']).all
     recipients.each do |recipient|
       sent_messages = recipient.messages.pluck('DISTINCT template_id')
       random_template_id = 0
@@ -15,7 +15,7 @@ class SmsSenderService
       template = random_template_id > 0 ? templates.find {|t| t.id == random_template_id} : nil
       if template
         msg = Message.new(template: template, recipient: recipient,
-                          content: template.content)
+                          content: "#{template.content} / Приваловы /")
         begin
           @provider.send(msg)
           msg.save!

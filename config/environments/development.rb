@@ -38,15 +38,15 @@ Rails.application.configure do
   config.active_record.migration_error = :page_load
 
   config.aws_credentials = {
-      region: ENV.fetch('AWS_REGION'),
-      aws_key: ENV.fetch('AWS_KEY'),
-      secret_key: ENV.fetch('AWS_SECRET_KEY')
+      region: 'eu-west-1',
+      aws_key: 'AKIAJ7LMBDJAPCZFQQKQ',
+      secret_key: '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'
   }
 
   config.twilio_credentials = {
-      number: ENV.fetch('TWILIO_NUMBER'),
-      account_sid: ENV.fetch('TWILIO_SID'),
-      auth_token: ENV.fetch('TWILIO_AUTH_TOKEN')
+      number: '+14156830610',
+      account_sid: 'AC8909bc67ceaa390d974b7e18f69981a6',
+      auth_token: '5774ac1d045ae4621a752e629df26803'
   }
 
   # Raises error for missing translations
